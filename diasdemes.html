@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf8">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <title>Javascript - Obtener el ultimo dia de un mes/año dado</title>
+    <script>
+        $(document).ready(function() {
+
+            // cargamos los años
+            for (var i = 2000; i < 2020; i++) {
+                $("select[name=ano]").append(new Option(i, i));
+            }
+
+            // Evento que se ejecuta cuando se pulsa el boton del formulario
+            $("input[name=boton]").click(function() {
+
+                // Creamos un Date con el año y mes seleccionado del formulario
+                // y con el dia 0, que nos devolvera el ultimo dia del mes
+                // anterior.
+                fecha = new Date($("select[name=ano]").val(), $("select[name=mes]").val(), 0);
+
+                $("select[name=dia]").find('option').remove();
+                for (var i = 1; i < fecha.getDate(); i++) {
+                    $("select[name=dia]").append(new Option(i, "dia " + i));
+                }
+                $("#resultado").html(fecha.toDateString());
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Javascript - Obtener el ultimo día de un mes/año dado</h1>
+
+    <p>Código en Javascript y con jquery, que muestra como obtener el último día de cualquier mes/año utilizando la clase
+        <strong>Date()</strong></p>
+
+    <form name="formulario">
+        <select name="ano"> <!-- Los años se cargan con javascript y jquery -->
+        </select>
+
+        <select name="mes">
+            <option value="1">Enero</option>
+            <option value="2">Febrero</option>
+            <option value="3">Marzo</option>
+            <option value="4">Abril</option>
+            <option value="5">Mayo</option>
+            <option value="6">Junio</option>
+            <option value="7">Julio</option>
+            <option value="8">Agosto</option>
+            <option value="9">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
+        </select>
+
+        <select name="dia"> <!-- Los años se cargan con javascript y jquery -->
+        </select>
+
+        <input type="button" name="boton" value="buscar el numero de dias">
+
+        <div id="resultado"></div>
+    </form>
+
+    <p><a href="http://www.lawebdelprogramador.com">La Web del Programador</a></p>
+    </boby>
+
+    </html>

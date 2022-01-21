@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Casa cancer</title>
+</head>
+
+<body>
+    <h1>Calculadora de temperatura</h1>
+
+    <form action="#" method="post">
+        <label for="gradoCelsius">Grados Celsius:</label>
+        <input type="text" name="gradoCelsius" id="gradoCelsius">
+        <input type="button" name="enviar" id="enviar" value="calcular" onclick="convertir()" />
+    </form>
+
+    <script type="text/javascript">
+        function convertir() {
+            var celsius = document.getElementById("gradoCelsius").value;
+            var fahrenheit = ((celsius * 9) / 5) + 32;
+            var kelvin = parseInt(celsius) + 273.15;
+
+
+            alert(fahrenheit + "°F " + " y " + kelvin + " °K ");
+        }
+    </script>
+
+
+
+</body>
+
+</html>

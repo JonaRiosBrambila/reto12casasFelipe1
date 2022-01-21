@@ -1,0 +1,43 @@
+Crea un programa llamado "Número mágico", donde generarás un número aleatorio y el usuario tendrá que adivinarlo. Considera lo siguiente: Si el numero ingresado es mayor, mostrar "El número que ingresaste es mayor al número mágico". Si el número ingresado
+es menor, mostrar "El número que ingresaste es menor al número mágico". Si el número ingresado es igual al número mágico, mostrar "Felicidades, adivinaste el número mágico", Agregar una opción para finalizar el programa. Escorpio
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de Escorpio</title>
+</head>
+
+<body>
+    <script>
+        var bienvenida = alert("Este es el reto del numero magico, para superar la prueba deberas adivinar el numero")
+        var num = parseInt(prompt("Dame un numero "));
+
+        function compare() {
+            if (num == 6) {
+                alert("Felicidades, adivinaste el numero mágico");
+            } else if (num > 6) {
+                alert("El número que ingresaste es mayor que el número magico");
+            } else if (num < 6) {
+                alert("El número que ingresaste es menor que el número magico");
+            } else
+                alert("Esto no es un numero")
+        }
+        compare();
+
+
+        var volver = confirm("¿Deseas volver a jugar?")
+
+        //     function volver(){
+        //         if (volver == true){
+        //         reload();
+        //         }else
+
+        //     }
+    </script>
+</body>
+
+</html>
